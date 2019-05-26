@@ -2,8 +2,10 @@
 GitHub项目链接为：
 - 单元测试：[https://github.com/Mity1299/SpringBoot/tree/master/junit](https://github.com/Mity1299/SpringBoot/tree/master/junit)
 - 套件测试：[https://github.com/Mity1299/SpringBoot/tree/master/junit-suit](https://github.com/Mity1299/SpringBoot/tree/master/junit-suit)
+##Junit的介绍##
 1. Junit的作用
 Junit使用于单元测试的组件，即对单一实体、类、方法的测试，测试他们的功能是否能按需要正常运行。
+##Junit的使用
 1. 添加依赖
 ```
 	<dependency>
@@ -95,6 +97,7 @@ public void test() {
         assertEquals("user1", user.getName());
     }```
 由于我的数据库里id=1的user的name是user1，因此使用断言判断测试结果是否是user1
+##断言机制
 2. 断言机制
 所谓的断言，就是一种判断结果是否正确的机制，总是以“assertXXXX”格式出现，只要有一条验证结果与预想不匹配，则测试不通过。
 
@@ -113,6 +116,8 @@ if(是我们想要的结果){
 
  这样就使程序员可以进行批量测试，因为不需要一个一个地看方法的返回值是什么，再自己进行判断。
 >常用断言见:[https://www.jianshu.com/p/c14f0b974b90](https://www.jianshu.com/p/c14f0b974b90 "JUnit常用断言及注解")
+
+ ##套件测试
 1. 套件测试
 所谓的套件测试其实是升级版的批量测试。
 在实际项目中，随着项目进度的开展，单元测试类会越来越多，可是直到现在我们还只会一个一个的单独运行测试类，这在实际项目实践中肯定是不可行的。为了解决这个问题，JUnit 提供了一种批量运行测试类的方法，叫做测试套件。在前面的介绍中，我们最多只能对一个类的方法进行批量测试，但是在套件测试中，我们可以将多个类的测试放在一起进行测试。
@@ -128,9 +133,13 @@ if(是我们想要的结果){
 	//这里面不用写代码
 	}
 	```
-该套件会执行```@SuiteClasses```里的所有测试类
+该套件会执行```@SuiteClasses```里的所有测试类，在这里即是```HouseControllerTest```和```UserControllerTest```
 
+ ##常用注解
 3. 常用注解
 >见[https://www.cnblogs.com/wxishang1991/p/4485686.html](https://www.cnblogs.com/wxishang1991/p/4485686.html "junit常用注解详细说明 ")
 
-
+ ##补充知识 
+1. Http补充知识
+理解测试中打印出来的请求和响应体
+>见[https://www.cnblogs.com/TankXiao/archive/2012/02/13/2342672.html#statelesshttp](https://www.cnblogs.com/TankXiao/archive/2012/02/13/2342672.html#statelesshttp "HTTP协议详解")
